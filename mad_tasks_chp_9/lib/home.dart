@@ -18,9 +18,9 @@ class Home extends StatelessWidget {
             floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('Custom Scroll Example'),
+              title: Text('Adding a picture'),
               background: Image.network(
-                'https://example.com/your-image-url.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS0eSWzKT-WuUtgDqz1f6-3B0JdHGbjfg8hg&usqp=CAU',
                 fit: BoxFit.cover,
               ),
             ),
