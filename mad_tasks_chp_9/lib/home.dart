@@ -4,13 +4,35 @@ import 'package:mad_tasks_chp_9/widgets/row_with_card_widgets.dart';
 import 'package:mad_tasks_chp_9/widgets/row_widget.dart';
 import 'package:mad_tasks_chp_9/widgets/silver_list_widget.dart';
 
-
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: 20,
+          itemBuilder: (BuildContexttext, int index) {
+            if (index == 0) {
+              return HeaderWidget(key: Key('header_$index'), index: index);
+            } else if (index >= 1 && index <= 5) {
+              return RowWithCardWidget(
+                  key: Key('rowWithCard_$index'), index: index);
+            }
+            /*else if(index >= 3 && index <= 7)
+          {
+            return SliverListWidget(key: Key('row_$index'), index: index);
+          }*/
+            else {
+              return RowWidget(key: Key('row_$index'), index: index);
+            }
+          },
+        ),
+      ),
+    );
+  }
+  /*Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -40,28 +62,5 @@ class Home extends StatelessWidget {
         ],
       ),
     );
-  }
-    
-    
-    /*Scaffold(
-      body: SafeArea(
-        child: ListView.builder(
-          itemCount: 20,
-          itemBuilder: (BuildContexttext, int index) {
-          if (index == 0) {
-           return HeaderWidget(key: Key('header_$index'), index: index);
-          } else if (index >= 1 && index <= 3) {
-          return RowWithCardWidget(key: Key('rowWithCard_$index'), index: index);
-          }
-          /*else if(index >= 3 && index <= 7)
-          {
-            return SliverListWidget(key: Key('row_$index'), index: index);
-          }*/ 
-          else {
-          return RowWidget(key: Key('row_$index'), index: index);
-          }
-          },
-        ),
-      ),
-    )*/
+  }*/
 }
